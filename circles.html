@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://www.w3schools.com/w3images/main.js"></script>
+    <style>
+      body{
+          margin: 0;
+          padding: 0;
+          
+      }
+      .wrapper{
+          width: 50%;
+          min-height: 550px;
+          margin: auto;
+          margin-top: 50px;
+          border-radius: 50%;
+          position: relative;
+          animation: round 15s linear  infinite ;
+
+      }
+      .wrapper div{
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          position: absolute;
+          
+      }
+      #one{
+          top: 10%;
+          left: 40%;
+      }
+      #two{
+         left: 15%;
+         top: 40%;
+      }
+      #third{
+          top: 40%;
+          left: 65%;
+      }
+      #fourth{
+          top: 70%;
+          left: 40%;
+          
+      }
+      
+      #active{
+          top: 40%;
+          left: 40%;
+          transform: rotate(360deg) ;
+          
+      }
+      .crcl{
+          animation: round 4s linear  infinite ;
+          text-align: center;
+          transition: all ease 1s;
+      }
+      .crcl::after{
+          content: '';
+          display: block;
+          width: 30px;
+          height: 30px;
+          margin-top:70px;
+          border-radius: 50%;
+          background: #ffffff;
+      }
+      
+      @keyframes round{
+          0%{
+              transform: rotate(0deg)
+          }
+          100%{
+              transform: rotate(360deg)
+          }
+      }
+    </style>
+  
+</head>
+<body>
+        
+        <div class="wrapper">
+           <div style="background:#f8b595" class="crcl" id="one"></div>
+           <div style="background:#f67280" class="crcl" id="two"></div>
+           <div style="background:#c06c84" class="crcl" id="third"></div>
+           <div style="background:#6c5b7c" class="crcl" id="fourth"></div>
+           <div style="background:#303242" class="crcl" id="active"></div>
+
+        </div>
+        <script>
+         
+        var num=document.getElementsByClassName('crcl').length;
+        for(var i=0;i<num;i++){
+           document.getElementsByClassName('crcl')[i].addEventListener('click',function(evt){
+               if('active'== evt.target.attributes.getNamedItem('id').value){
+                   alert('You Should click on circles around ')
+                   return false;
+               }
+             var activeId=evt.target.attributes.getNamedItem("id").value;
+             evt.target.attributes.removeNamedItem('id').value;
+             document.getElementById('active').setAttribute('id', activeId);  
+              evt.target.setAttribute('id' , 'active')
+           })
+        }
+        
+
+         var data=[
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'PHP',
+  'Python',
+  'jQuery',
+  'SQL',
+  'Bootstrap',
+  'Node.js',
+]
+ 
+        
+       
+        </script>   
+    
+    
+</body>
+</html>
