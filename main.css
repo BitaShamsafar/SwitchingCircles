@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.wrapper{
+    width: 50%;
+    min-height: 550px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 50%;
+    position: relative;
+    animation: round 15s linear  infinite ;
+
+}
+.wrapper div{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    
+}
+#one{
+    top: 10%;
+    left: 40%;
+}
+#two{
+   left: 15%;
+   top: 40%;
+}
+#third{
+    top: 40%;
+    left: 65%;
+}
+#fourth{
+    top: 70%;
+    left: 40%;
+    
+}
+
+#active{
+    top: 40%;
+    left: 40%;
+    transform: rotate(360deg) ;
+    
+}
+.crcl{
+    animation: round 4s linear  infinite ;
+    text-align: center;
+    transition: all ease 1s;
+}
+.crcl::after{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top:70px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+@keyframes round{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
